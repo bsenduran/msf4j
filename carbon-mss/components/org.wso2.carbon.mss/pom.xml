@@ -149,7 +149,7 @@
                             <Private-Package>org.wso2.carbon.mss.internal.*</Private-Package>
                             <Export-Package>
                                 !org.wso2.carbon.mss.internal.*,
-                                org.wso2.carbon.mss*;version="1.0.0"
+                                org.wso2.carbon.mss*
                             </Export-Package>
                             <Import-Package>
                                 org.wso2.carbon.kernel.deployment.*,
@@ -163,6 +163,7 @@
                                 org.osgi.framework.*;version="${osgi.framework.import.version.range}",
                                 org.osgi.util.tracker; version="${osgi.service.tracker.import.version.range}",
                                 org.wso2.carbon.transport.http.netty.listener.*,
+                                org.wso2.carbon.messaging.*,
                             </Import-Package>
                             <_dsannotations>*</_dsannotations>
                         </instructions>

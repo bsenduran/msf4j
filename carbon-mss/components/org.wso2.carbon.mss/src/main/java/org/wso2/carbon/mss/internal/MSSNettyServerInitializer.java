@@ -24,16 +24,16 @@ import io.netty.handler.codec.http.HttpContentCompressor;
 import io.netty.handler.codec.http.HttpRequestDecoder;
 import io.netty.handler.codec.http.HttpResponseEncoder;
 import io.netty.util.concurrent.DefaultEventExecutorGroup;
+import org.wso2.carbon.messaging.CarbonTransportServerInitializer;
 import org.wso2.carbon.mss.internal.router.HttpDispatcher;
 import org.wso2.carbon.mss.internal.router.RequestRouter;
-import org.wso2.carbon.transport.http.netty.listener.CarbonNettyServerInitializer;
 
 import java.util.Map;
 
 /**
  * Netty Transport ServerInitializer for the Microservices Server.
  */
-public class MSSNettyServerInitializer implements CarbonNettyServerInitializer {
+public class MSSNettyServerInitializer implements CarbonTransportServerInitializer {
 
     private DefaultEventExecutorGroup eventExecutorGroup;
 
@@ -56,5 +56,10 @@ public class MSSNettyServerInitializer implements CarbonNettyServerInitializer {
         pipeline.addLast(eventExecutorGroup, "router",
                 new RequestRouter(microservicesRegistry.getHttpResourceHandler(), 0));
         pipeline.addLast(eventExecutorGroup, "dispatcher", new HttpDispatcher());
+    }
+
+    @Override
+    public String getName() {
+        return MSSNettyServerInitializer.class.getName();
     }
 }
