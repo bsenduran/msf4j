@@ -131,6 +131,21 @@
             <artifactId>logback-classic</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.wso2.carbon.messaging</groupId>
+            <artifactId>org.wso2.carbon.messaging</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-pool.wso2</groupId>
+            <artifactId>commons-pool</artifactId>
+            <version>${commons.pool.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.orbit.com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>${disruptor.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -164,6 +179,7 @@
                                 org.osgi.util.tracker; version="${osgi.service.tracker.import.version.range}",
                                 org.wso2.carbon.transport.http.netty.listener.*,
                                 org.wso2.carbon.messaging.*,
+                                org.apache.commons.pool.*,
                             </Import-Package>
                             <_dsannotations>*</_dsannotations>
                         </instructions>
