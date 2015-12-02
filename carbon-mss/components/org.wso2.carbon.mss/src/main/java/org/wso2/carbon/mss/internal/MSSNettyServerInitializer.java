@@ -58,8 +58,4 @@ public class MSSNettyServerInitializer implements CarbonTransportServerInitializ
         pipeline.addLast(eventExecutorGroup, "dispatcher", new HttpDispatcher());
     }
 
-    @Override
-    public String getName() {
-        return MSSNettyServerInitializer.class.getName();
-    }
 }
