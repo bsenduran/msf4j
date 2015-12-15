@@ -334,6 +334,12 @@
                 <version>${axiom.impl.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.wso2.carbon.messaging</groupId>
+                <artifactId>org.wso2.carbon.messaging</artifactId>
+                <version>${org.wso2.carbon.messaging.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.wso2.carbon.identity</groupId>
                 <artifactId>org.wso2.carbon.ldap.server</artifactId>
                 <version>${carbon.ldap.server.version}</version>
@@ -401,7 +407,14 @@
 
         <!-- Dependencies -->
         <carbon.kernel.version>5.0.0-beta</carbon.kernel.version>
+
         <org.wso2.carbon.transport.http.netty.version>1.0.0-SNAPSHOT</org.wso2.carbon.transport.http.netty.version>
+        <org.wso2.carbon.transport.http.netty.osgi.version>1.0.0.SNAPSHOT</org.wso2.carbon.transport.http.netty.osgi.version>
+
+        <org.wso2.carbon.messaging.version>1.0.0-SNAPSHOT</org.wso2.carbon.messaging.version>
+        <org.wso2.carbon.messaging.osgi.version>1.0.0.SNAPSHOT</org.wso2.carbon.messaging.osgi.version>
+
+
         <carbon.mss.version>1.0.0-SNAPSHOT</carbon.mss.version>
         <carbon.mss.version>1.0.0-SNAPSHOT</carbon.mss.version>
         <carbon.metrics.version>1.2.0-m2</carbon.metrics.version>
