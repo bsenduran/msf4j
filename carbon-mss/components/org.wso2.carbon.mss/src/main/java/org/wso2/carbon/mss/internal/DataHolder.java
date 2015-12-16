@@ -23,6 +23,7 @@ import org.osgi.framework.ServiceRegistration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.wso2.carbon.kernel.transports.CarbonTransport;
+import org.wso2.carbon.messaging.CarbonTransportInitializer;
 import org.wso2.carbon.transport.http.netty.listener.CarbonNettyServerInitializer;
 
 import java.util.HashMap;
@@ -39,7 +40,7 @@ public class DataHolder {
 
     private static DataHolder instance = new DataHolder();
     private BundleContext bundleContext;
-    private Map<String, ServiceRegistration<CarbonNettyServerInitializer>> carbonTransports = new HashMap<>();
+    private Map<String, ServiceRegistration<CarbonTransportInitializer>> carbonTransports = new HashMap<>();
 
     private DataHolder() {
     }
@@ -66,8 +67,8 @@ public class DataHolder {
         httpInitParams.put(CHANNEL_ID_KEY, channelKey);
         MSSNettyServerInitializer gatewayNettyInitializer =
                 new MSSNettyServerInitializer(MicroservicesRegistry.getInstance());
-        ServiceRegistration<CarbonNettyServerInitializer> service =
-                bundleContext.registerService(CarbonNettyServerInitializer.class,
+        ServiceRegistration<CarbonTransportInitializer> service =
+                bundleContext.registerService(CarbonTransportInitializer.class,
                         gatewayNettyInitializer, httpInitParams);
         carbonTransports.put(channelKey, service);
     }
