@@ -22,6 +22,19 @@
         <maven>3.0.0</maven>
     </prerequisites>
 
+    <repositories>
+        <repository>
+            <id>wso2-nexus-staging</id>
+            <name>WSO2 staging Repository</name>
+            <url>http://maven.wso2.org/nexus/content/repositories/orgwso2carbon-177/</url>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>ignore</checksumPolicy>
+            </releases>
+        </repository>
+    </repositories>
+
     <pluginRepositories>
         <pluginRepository>
             <id>wso2-nexus</id>
@@ -406,7 +419,7 @@
         <maven.gpgplugin.version>1.5</maven.gpgplugin.version>
 
         <!-- Dependencies -->
-        <carbon.kernel.version>5.0.0-SNAPSHOT</carbon.kernel.version>
+        <carbon.kernel.version>5.0.0</carbon.kernel.version>
 
         <org.wso2.carbon.transport.http.netty.version>1.0.0-SNAPSHOT</org.wso2.carbon.transport.http.netty.version>
         <org.wso2.carbon.transport.http.netty.osgi.version>1.0.0.SNAPSHOT</org.wso2.carbon.transport.http.netty.osgi.version>

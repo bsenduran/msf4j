@@ -24,7 +24,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.wso2.carbon.kernel.transports.CarbonTransport;
 import org.wso2.carbon.messaging.CarbonTransportInitializer;
-import org.wso2.carbon.transport.http.netty.listener.CarbonNettyServerInitializer;
 
 import java.util.HashMap;
 import java.util.Hashtable;
