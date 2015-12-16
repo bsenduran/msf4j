@@ -319,6 +319,7 @@
             org.wso2.carbon.kernel.transports.*,
             org.wso2.carbon.kernel.startupresolver.*,
             org.wso2.carbon.transport.http.netty.listener.*,
+            org.wso2.carbon.messaging.*
         </import.package>
         <provide.capability>
             osgi.service;effective:=active;
